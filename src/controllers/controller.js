@@ -1,8 +1,11 @@
-// src/controllers/controller.js
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-const path = require('path');
+/* recreate __dirname */
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-exports.getHomePage = async (req, res) => {
+export const getHomePage = async (req, res) => {
   try {
     const filePath = path.resolve(__dirname, '..', '..', 'public', 'views', 'index.html');
     res.sendFile(filePath);
@@ -12,7 +15,7 @@ exports.getHomePage = async (req, res) => {
   }
 };
 
-exports.getLoginPage = async (req, res) => {
+export const getLoginPage = async (req, res) => {
   try {
     const filePath = path.resolve(__dirname, '..', '..', 'public', 'views', 'login.html');
     res.sendFile(filePath);
@@ -22,9 +25,9 @@ exports.getLoginPage = async (req, res) => {
   }
 };
 
-exports.getSignupPage = async (req, res) => {
+export const getSignupPage = async (req, res) => {
   try {
-    const filePath = path.resolve(__dirname, '..', '..', 'public', 'views', 'signup.html'); //Pas encore de page login a changer 
+    const filePath = path.resolve(__dirname, '..', '..', 'public', 'views', 'signup.html');
     res.sendFile(filePath);
   } catch (err) {
     console.error('Error fetching data:', err);

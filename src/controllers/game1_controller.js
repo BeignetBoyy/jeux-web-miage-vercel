@@ -1,8 +1,10 @@
-// src/controllers/game1_controller.js
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-const path = require('path');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-exports.getMainPage = async (req, res) => {
+export const getMainPage = async (req, res) => {
   try {
     const filePath = path.resolve(__dirname, '..', '..', 'games', 'karting', 'index.html');
     res.sendFile(filePath);

@@ -1,11 +1,12 @@
 // src/routes/routes.js
 
-const express = require('express');
-const homeController = require('../controllers/controller');
+import express from 'express';
+import * as homeController from '../controllers/controller.js';
+
 const router = express.Router();
 
 router.get('/', homeController.getHomePage);
 router.get('/login', homeController.getLoginPage);
 router.get('/signup', homeController.getSignupPage);
 
-module.exports = router;
+export default router;

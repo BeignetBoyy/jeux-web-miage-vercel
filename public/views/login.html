@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <title>Login</title>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="/"><i class="fi fi-br-home"></i></a>
+    </div>
+
+    <div class="form-div" id="login">
+        <div class="full-form">        
+            <h4 class="container-style">Connexion</h4>
+            <form class="login-form container-style">
+                <input type="text" name="username" placeholder="Pseudo">
+                <input type="password" name="password" placeholder="Mot de passe">
+                <input type="submit" value="Valider">
+            </form>
+            <p>Pas de compte ? <a href="/signup">Inscription</a></p>
+        </div>
+
+        <div class="logged-in">
+            <h2>Vous êtes connecté en tant que</h2>
+            <h1 id="pseudo"></h1>
+            <button class="container-style" id="logout">Se deconnecter</button>
+        </div>
+    </div>
+
+    <script src="/scripts/login.js"></script>
+</body>
+</html

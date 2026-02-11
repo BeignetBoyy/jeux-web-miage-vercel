@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <link rel='stylesheet' type="text/css" href='/karting/styles/style.css'>
+    <link rel='stylesheet' type="text/css" href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+
+    <title>Karting</title>
+</head>
+<body>
+  <div class="scores">
+    <h1 class="container-style">Rouge : <span id="red-score">0</span></h1>
+    <h1 class="container-style">Bleu : <span id="blue-score">0</span></h1>
+  </div>
+
+  <div class="canvas-section">
+    <div id="start">
+      <div class="controls">
+        <h1>Touches : </h1>
+        <div class="red-controls">
+          <p>Z</p>
+          <p>Q</p>
+          <p>S</p>
+          <p>D</p>
+        </div>
+
+        <div class="blue-controls">
+          <p><i class="fi fi-br-arrow-small-up"></i></p>
+          <p><i class="fi fi-br-arrow-small-left"></i></p>
+          <p><i class="fi fi-br-arrow-small-down"></i></p>
+          <p><i class="fi fi-br-arrow-small-right"></i></p>
+        </div>
+
+      </div>
+
+      <h1>Appuyer n'importe où pour lancer la partie</h1>
+    </div>
+
+    <div id="game-over">
+      <h1>Fin de la partie</h1>
+      <h1 class="end-scores"><span id="red-end-score">0</span><span id="blue-end-score">0</span></h1>
+      <h1>Victoire de : <span id="winner"></span></h1>
+      <button id="replay">Rejouer</button>
+    </div>
+
+    <canvas class="container-style" id="game" width="900" height="600"></canvas>
+  </div>
+
+  <script type="module" src="/karting/scripts/index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
+</body>
+</html>

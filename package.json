@@ -118,6 +118,7 @@
     "wrappy": "^1.0.2"
   },
   "scripts": {
+    "build": "npm install",
     "start": "node src/index.js",
     "dev": "nodemon src/index.js"
   },

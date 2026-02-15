@@ -55,7 +55,7 @@ async function signin(username, password, email) {
         "createdAt" : Date.now(),
     }
 
-    const insertResponse = await fetch(`/mongo/insert`, {
+    const insertResponse = await fetch(`/mongo/users/insert`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(user),

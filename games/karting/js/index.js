@@ -159,6 +159,8 @@ function finishGame(){
 
     Howler.stop();
     winSoundEffect.play()
+
+    saveScoreToDb();
 }
 
 function restartGame(){
@@ -186,4 +188,27 @@ function restartGame(){
 
 function unlockAudio() {
   Howler.ctx.resume();
+}
+
+async function saveScoreToDb(){
+
+    const score = {
+        "redScore" : redScore,
+        "blueScore" : blueScore,
+        "date" : Date.now(),
+    }
+
+    const insertResponse = await fetch(`/mongo/scores/insert`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(score),
+    });
+
+    // Si la requete est reussi on renvoi directement à la page de base sinon erreur
+    const insertResult = await insertResponse.json();
+    if (insertResponse.ok) {
+        alert(`Success: ${insertResult.message}`);
+    } else {
+        alert(`Error: ${insertResult.error}`);
+    }
 }

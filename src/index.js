@@ -6,7 +6,8 @@ import { fileURLToPath } from 'url';
 import connectDB from './db/config.js';
 import routes from './routes/routes.js';
 import game1_routes from './routes/game1_routes.js';
-import mongo_routes from './routes/mongo_routes.js';
+import mongo_users_routes from './routes/mongo_users_routes.js';
+import mongo_scores_routes from './routes/mongo_scores_routes.js';
 
 dotenv.config();
 
@@ -26,7 +27,8 @@ app.use('/assets', express.static(path.join(__dirname, '..', 'public', 'assets')
 
 app.use("/", routes);
 app.use("/karting", game1_routes);
-app.use("/mongo", mongo_routes);
+app.use("/mongo/users", mongo_users_routes);
+app.use("/mongo/scores", mongo_scores_routes);
 
 connectDB().then(() => {
     app.listen(port, () => {

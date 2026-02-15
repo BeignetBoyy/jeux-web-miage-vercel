@@ -207,8 +207,8 @@ async function saveScoreToDb(){
     // Si la requete est reussi on renvoi directement à la page de base sinon erreur
     const insertResult = await insertResponse.json();
     if (insertResponse.ok) {
-        alert(`Success: ${insertResult.message}`);
+        console.log(`Success: ${insertResult.message}`);
     } else {
-        alert(`Error: ${insertResult.error}`);
+        console.error(`Error: ${insertResult.error}`);
     }
 }

@@ -39,7 +39,7 @@ router.get('/username/:username', async (req, res) => {
 router.post('/insert', async (req, res) => {
   try {
     const newUser = await Users.create(req.body);
-    res.json({ message: 'Nouvel emargement inséré avec succès', data: newUser });
+    res.json({ message: 'Nouvel utilisateur inséré avec succès', data: newUser });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: `Internal Server Error: ${err}` });

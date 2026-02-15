@@ -29,7 +29,7 @@ router.get('/id/:id', async (req, res) => {
 router.post('/insert', async (req, res) => {
   try {
     const newUser = await Scores.create(req.body);
-    res.json({ message: 'Nouvel emargement inséré avec succès', data: newUser });
+    res.json({ message: 'Nouveau score inséré avec succès', data: newUser });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: `Internal Server Error: ${err}` });

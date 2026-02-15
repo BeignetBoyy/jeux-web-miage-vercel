@@ -26,13 +26,20 @@ let canvas,
     replayButton,
     playButton,
     bgMusic,
-    winSoundEffect;
+    winSoundEffect,
+    loadingDiv;
 
 function init(){
     console.log("OK")
     generateTable();
 
+    console.log("En attente du chargement des assets")
+    loadingDiv = document.querySelector(".loading")
+
     loadAssets((assetsLoaded) => {
+        console.log("Tous les assets ont été chargés")
+
+        loadingDiv.style.display = "none";
 
         bgMusic = assetsLoaded.bgMusic;
         winSoundEffect = assetsLoaded.win;

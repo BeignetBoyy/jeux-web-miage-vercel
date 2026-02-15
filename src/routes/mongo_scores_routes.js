@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.get('/all', async (req, res) => {
   try {
-    const users = await Scores.find().sort({ createdAt: -1 });
+    const users = await Scores.find().sort({ date: -1 });
     res.json(users);
   } catch (err) {
     console.error(err);

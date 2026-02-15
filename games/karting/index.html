@@ -6,11 +6,24 @@
     <link rel='stylesheet' type="text/css" href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
 
     <title>Karting</title>
+
+    <div class="navbar">
+      <a href="/"><i class="fi fi-br-home"></i></a>
+      <a id="display-scores"><i class="fi fi-br-rectangle-list"></i></a>
+    </div>
 </head>
 <body>
   <div class="scores">
     <h1 class="container-style">Rouge : <span id="red-score">0</span></h1>
     <h1 class="container-style">Bleu : <span id="blue-score">0</span></h1>
+  </div>
+  
+  <div class="scoreboard">
+    <h1 class="container-style">Scores</h1>
+    <div class="scoreboard-div container-style">
+      <div class="table">
+      </div>
+    </div>
   </div>
 
   <div class="canvas-section">
@@ -33,7 +46,8 @@
 
       </div>
 
-      <h1>Appuyer n'importe où pour lancer la partie</h1>
+      <button id="play">Lancer la partie</button>
+
     </div>
 
     <div id="game-over">

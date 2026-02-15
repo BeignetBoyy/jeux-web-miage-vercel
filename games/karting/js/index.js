@@ -2,6 +2,7 @@ import Kart from "./kart.js";
 import Coin from "./coin.js";
 import { loadAssets } from "./assets.js";
 import { drawCapsule, checkCollision } from "./utils.js";
+import { generateTable } from "./generateTable.js";
 
 
 window.onload = init;
@@ -23,11 +24,13 @@ let canvas,
     lastTime,
     gameOverPopup,
     replayButton,
+    playButton,
     bgMusic,
     winSoundEffect;
 
 function init(){
     console.log("OK")
+    generateTable();
 
     loadAssets((assetsLoaded) => {
 
@@ -46,6 +49,7 @@ function init(){
         blueScoreDisplay = document.getElementById("blue-score");
         gameOverPopup = document.getElementById("game-over");
         replayButton = document.getElementById("replay");
+        playButton = document.getElementById("play");
 
 
         window.addEventListener("keydown", e => keys[e.key] = true);
@@ -68,7 +72,8 @@ function init(){
         });
 
         coin = new Coin(canvasLargeur, canvasHauteur, assetsLoaded);
-        window.addEventListener("click", startGame, { once: true });
+
+        play.addEventListener("click", startGame);
         replayButton.addEventListener("click", restartGame);
     });
 }
